@@ -13,6 +13,8 @@ RUN apk add --no-cache ca-certificates bash git openssh curl gettext jq bind-too
     && chmod g+rwx /config \
     && apk add git \
     && apk add --no-cache make \
+    && apk add --update docker openrc \
+    && rc-update add docker boot \
     && helm repo add "stable" "https://charts.helm.sh/stable" --force-update
 
 WORKDIR /config
