@@ -16,12 +16,9 @@ RUN apk add --no-cache ca-certificates bash git openssh curl gettext jq bind-too
     && apk add --update docker openrc \
     && rc-update add docker boot \
     && helm repo add "stable" "https://charts.helm.sh/stable" --force-update
-    && apk add --no-cache \
-        python3 \
-        py3-pip \
+    && apk add --no-cache python3 py3-pip \
     && pip3 install --upgrade pip \
-    && pip3 install --no-cache-dir \
-        awscli \
+    && pip3 install --no-cache-dir awscli \
     && rm -rf /var/cache/apk/*
     && mkdir /root/.kube 
     && mkdir /root/.aws  
