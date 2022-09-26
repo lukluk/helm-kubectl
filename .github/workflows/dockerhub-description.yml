@@ -18,5 +18,5 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: lukluk/helm-kubectl
+        repository: luklukls/helm-kubectl
         short-description: ${{ github.event.repository.description }}
