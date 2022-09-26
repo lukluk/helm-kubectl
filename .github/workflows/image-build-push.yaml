@@ -17,20 +17,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: actions/checkout@v2
-      -
-        name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v3
-        with:
-          images: |
-            luklukls/helm-kubectl
-          tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}
-            type=semver,pattern={{major}}.{{minor}}
+        uses: actions/checkout@v2               
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
@@ -50,5 +37,4 @@ jobs:
           build-args: |
             KUBE_VERSION=1.22.2
             HELM_VERSION=3.7.0
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: luklukls/helm-kubectl:latest          
