@@ -1,6 +1,6 @@
 default: docker_build
 
-DOCKER_IMAGE ?= lukluk/helm-kubectl
+DOCKER_IMAGE ?= luklukls/deployer
 DOCKER_TAG ?= `git rev-parse --abbrev-ref HEAD`
 
 # Note: Latest version of kubectl may be found at:
